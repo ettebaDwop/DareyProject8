@@ -5,7 +5,7 @@ This project enhances the tooling project implemented in project 7. It introduce
 ![proj8](https://github.com/ettebaDwop/dareyProject8/assets/7973831/ff64d604-485a-4b36-b348-271d09b5855c)
 
 ## Task
-To Deploy and configure an Apache Load Balancer for Tooling Website solution (implementaed in Project 7) on a separate Ubuntu EC2 intance. To make sure that users can be served by Web servers through the Load Balancer.
+The aim of this project is to deploy and configure an Apache Load Balancer for the  Tooling Website solution implementaed in Project 7 on a separate Ubuntu EC2 instance. This enables users to be served by Web servers through the Load Balancer.
 
 The task involves a simple implementation using 2 Web Servers. This approach can be extended to 3 or more Web Servers.
 
