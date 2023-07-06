@@ -19,9 +19,11 @@ The prerequisites for this project have already been configured in project 7:
 
 ## Implementation
 #### Configure Apache As A Load Balancer
-1. Create an Ubuntu Server 20.04 EC2 instance and name it Project-8-apache-lb, so your EC2 list will look like this:
-2. Open TCP port 80 on Project-8-apache-lb by creating an Inbound Rule in Security Group.
-3. Install Apache Load Balancer on Project-8-apache-lb server and configure it to point traffic coming to LB to both Web Servers:
+1. Create an Ubuntu Server 22.04 EC2 instance and name it *Project-8-apache-lb* :
+   
+   
+3. Open TCP port 80 on Project-8-apache-lb by creating an Inbound Rule in Security Group.
+4. Install Apache Load Balancer on Project-8-apache-lb server and configure it to point traffic coming to LB to both Web Servers:
 #Install apache2
 
 ```
