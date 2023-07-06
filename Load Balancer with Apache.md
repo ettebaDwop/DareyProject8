@@ -14,5 +14,7 @@ The prerequisites for this project have already been configured in project 7:
 - Two RHEL8 Web Servers
 - One MySQL DB Server (based on Ubuntu 20.04)
 - One RHEL8 NFS server
+  
+![Prereq_proj8](https://github.com/ettebaDwop/dareyProject8/assets/7973831/c7c3c702-355c-4ce8-b485-aa6e344d820b)
 
 ## Implementation
