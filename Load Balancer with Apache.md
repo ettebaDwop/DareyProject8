@@ -62,9 +62,9 @@ sudo vi /etc/apache2/sites-available/000-default.conf
 sudo systemctl restart apache2
 bytraffic balancing method will distribute incoming load between your Web Servers according to current traffic load. We can control in which proportion the traffic must be distributed by loadfactor parameter.
 
-You can also study and try other methods, like: bybusyness, byrequests, heartbeat
 
-Verify that our configuration works – try to access your LB’s public IP address or Public DNS name from your browser:
+
+4. Verify that our configuration works – try to access your LB’s public IP address or Public DNS name from your browser:
 http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php
 Note: If in the Project-7 you mounted /var/log/httpd/ from your Web Servers to the NFS server – unmount them and make sure that each Web Server has its own log directory.
 
