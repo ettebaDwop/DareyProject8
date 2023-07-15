@@ -20,10 +20,15 @@ The prerequisites for this project have already been configured in project 7:
 ## Implementation
 #### Configure Apache As A Load Balancer
 1. Create an Ubuntu Server 22.04 EC2 instance and name it *Project-8-apache-lb* :
-   
+  
+![Screenshot (503)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/101ec19c-97d7-4aec-a21d-25bfdd010ad6)
    
 2. Open TCP port 80 on Project-8-apache-lb by creating an Inbound Rule in Security Group.
+
+![Screenshot (504)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/23a9b718-9300-40b7-aa93-0bc1700aa642)
+
 3. Install Apache Load Balancer on Project-8-apache-lb server and configure it to point traffic coming to LB to both Web Servers:
+   
 #Install apache2
 
 ```
