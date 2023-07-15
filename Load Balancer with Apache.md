@@ -52,14 +52,6 @@ Make sure apache2 is up and running
 
 `sudo systemctl status apache2`
 ![Screenshot (505)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/d44ddb3d-a12c-44a8-bc5b-a0324ceab3a5)
-![Screenshot (506)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/088c4c42-3503-48fa-a0cb-2284e2abe577)
-![Screenshot (507)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/c8b2e4a4-ce01-4f74-aefc-9f347f560dd2)
-![Screenshot (508)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/8e000d03-4b6b-4e7b-9862-e805ca7777ba)
-![Screenshot (509)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/dd1f9850-fed2-4ea1-b92d-32d79d6cf644)
-![Screenshot (510)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/cc4cbca5-9db0-45a3-89e1-0e0b9c5b4ba2)
-![Screenshot (511)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/0fec3cd6-847f-4c4a-b640-bba4881688a4)
-![Screenshot (512)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/856bd113-f32e-4639-aa41-d4c9886f5892)
-
 
 Configure load balancing
 
@@ -77,29 +69,31 @@ Configure load balancing
         ProxyPreserveHost On
         ProxyPass / balancer://mycluster/
         ProxyPassReverse / balancer://mycluster/
+```
+
+![Screenshot (506)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/088c4c42-3503-48fa-a0cb-2284e2abe577)
+
+The *bytraffic* balancing method will distribute incoming load between the Web Servers according to current traffic load. The proportion of traffic distribution can be controlled by the appplication of the loadfactor parameter.
 
 #Restart apache server
 
-sudo systemctl restart apache2
-```
+`sudo systemctl restart apache2`
 
-
-
-The *bytraffic* balancing method will distribute incoming load between your Web Servers according to current traffic load. We can control in which proportion the traffic must be distributed by loadfactor parameter.
-
-4. Verify that our configuration works – try to access your LB’s public IP address or Public DNS name from your browser:
+To verify that the configuration works – We will try to access the LB’s public IP address or Public DNS name from our browser:
    
 `http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php`
 
-Note: If in the Project-7 you mounted /var/log/httpd/ from your Web Servers to the NFS server – unmount them and make sure that each Web Server has its own log directory.
+![Screenshot (507)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/c8b2e4a4-ce01-4f74-aefc-9f347f560dd2)
 
-Open two ssh/Putty consoles for both Web Servers and run following command:
+Note: If in the Project-7 we mounted /var/log/httpd/ from our Web Servers to the NFS server – Then we will have to unmount them and make sure that each Web Server has its own log directory.
+
+Open Web Server 1 and 2 and run following command:
 
 `sudo tail -f /var/log/httpd/access_log`
 
-Try to refresh your browser page http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php several times and make sure that both servers receive HTTP GET requests from your LB – new records must appear in each server’s log file. The number of requests to each server will be approximately the same since we set loadfactor to the same value for both servers – it means that traffic will be disctributed evenly between them.
+We will try to refresh our browser page http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php several times and make sure that both servers receive HTTP GET requests from your LB – new records must appear in each server’s log file. The number of requests to each server will be approximately the same since we set loadfactor to the same value for both servers – it means that traffic will be disctributed evenly between them.
 
-If you have configured everything correctly – your users will not even notice that their requests are served by more than one server.
+![Screenshot (508)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/8e000d03-4b6b-4e7b-9862-e805ca7777ba)
 
 # Optional Step – Configure Local DNS Names Resolution
 Sometimes it is tedious to remember and switch between IP addresses, especially if you have a lot of servers under your management.
@@ -123,4 +117,13 @@ BalancerMember http://Web2:80 loadfactor=5 timeout=1
 ```
 You can try to curl your Web Servers from LB locally curl http://Web1 or curl http://Web2 – it shall work.
 
+
 Remember, this is only internal configuration and it is also local to your LB server, these names will neither be ‘resolvable’ from other servers internally nor from the Internet.
+
+![Screenshot (509)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/dd1f9850-fed2-4ea1-b92d-32d79d6cf644)
+![Screenshot (510)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/cc4cbca5-9db0-45a3-89e1-0e0b9c5b4ba2)
+![Screenshot (511)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/0fec3cd6-847f-4c4a-b640-bba4881688a4)
+![Screenshot (512)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/856bd113-f32e-4639-aa41-d4c9886f5892)
+![Screenshot (513)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/f7155c29-3dcf-4006-b852-3b3b4b9c7254)
+![Screenshot (514)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/4b4674a7-6692-445c-b39e-c163a76e14f6)
+![Screenshot (515)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/9fe20d70-731e-422f-b8b1-2ed56788f1b0)
