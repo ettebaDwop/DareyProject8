@@ -52,6 +52,7 @@ Make sure apache2 is up and running
 
 `sudo systemctl status apache2`
 
+
 Configure load balancing
 
 ```sudo vi /etc/apache2/sites-available/000-default.conf
@@ -73,6 +74,8 @@ Configure load balancing
 
 sudo systemctl restart apache2
 ```
+
+
 
 The *bytraffic* balancing method will distribute incoming load between your Web Servers according to current traffic load. We can control in which proportion the traffic must be distributed by loadfactor parameter.
 
