@@ -1,11 +1,11 @@
 #  PROJECT 8: Load Balancer Solution With Apache
 ## Brief Overview
-This project enhances the tooling project implemented in project 7. It introduces the Load Balancing concept to ensure that the DevOps Tooling website will be scalable to serve more users by deploying additional Web Servers. This project will utilise the Apache Load Balancer and local DNS Names resolution.
+This project enhances the tooling project implemented in project 7. It introduces the Load Balancing concept to ensure that the DevOps Tooling websites will be scalable to serve more users by deploying additional Web Servers using a horizontal architecture. This project will utilise the Apache Load Balancer and local DNS Names resolution.
 
 ![proj8](https://github.com/ettebaDwop/dareyProject8/assets/7973831/ff64d604-485a-4b36-b348-271d09b5855c)
 
 ## Task
-The aim of this project is to deploy and configure an Apache Load Balancer for the  Tooling Website solution implementaed in Project 7 on a separate Ubuntu EC2 instance. This enables users to be served by Web servers through the Load Balancer.
+To deploy and configure an Apache Load Balancer for the Tooling Website solution implemented in Project 7 on a separate Ubuntu EC2 instance. This should enable users to be served by Web servers through the Load Balancer.
 
 The task involves a simple implementation using 2 Web Servers. This approach can be extended to 3 or more Web Servers.
 
@@ -22,8 +22,8 @@ The prerequisites for this project have already been configured in project 7:
 1. Create an Ubuntu Server 22.04 EC2 instance and name it *Project-8-apache-lb* :
    
    
-3. Open TCP port 80 on Project-8-apache-lb by creating an Inbound Rule in Security Group.
-4. Install Apache Load Balancer on Project-8-apache-lb server and configure it to point traffic coming to LB to both Web Servers:
+2. Open TCP port 80 on Project-8-apache-lb by creating an Inbound Rule in Security Group.
+3. Install Apache Load Balancer on Project-8-apache-lb server and configure it to point traffic coming to LB to both Web Servers:
 #Install apache2
 
 ```
