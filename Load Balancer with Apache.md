@@ -51,6 +51,7 @@ sudo systemctl restart apache2
 Make sure apache2 is up and running
 
 `sudo systemctl status apache2`
+
 ![Screenshot (505)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/d44ddb3d-a12c-44a8-bc5b-a0324ceab3a5)
 
 Configure load balancing
@@ -92,12 +93,14 @@ Open Web Server 1 and 2 and run following command:
 `sudo tail -f /var/log/httpd/access_log`
 
 We will try to refresh our browser page http://<Load-Balancer-Public-IP-Address-or-Public-DNS-Name>/index.php several times and make sure that both servers receive HTTP GET requests from your LB – new records must appear in each server’s log file. The number of requests to each server will be approximately the same since we set loadfactor to the same value for both servers – it means that traffic will be disctributed evenly between them.
-#Web Server 1 on Safari browser:
-![Screenshot (508)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/f5eace32-9352-48b0-8e0e-0196912144ba)
 
+#Web Server 1 on Safari browser:
+
+![Screenshot (509)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/9c70b728-b4b3-40ee-8be8-eb6c2bcc39ce)
 
 #WebServer 2 on Firefox browser:
-![Screenshot (509)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/9c70b728-b4b3-40ee-8be8-eb6c2bcc39ce)
+
+![Screenshot (508)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/f5eace32-9352-48b0-8e0e-0196912144ba)
 
 
 # Optional Step – Configure Local DNS Names Resolution
@@ -105,6 +108,7 @@ Sometimes it is tedious to remember and switch between IP addresses, especially 
 What we can do, is to configure local domain name resolution. The easiest way is to use /etc/hosts file, although this approach is not very scalable, but it is very easy to configure and shows the concept well. So let us configure IP address to domain name mapping for our LB.
 
 ```
+
 #Open this file on your LB server
 
 sudo vi /etc/hosts
@@ -123,8 +127,10 @@ BalancerMember http://Web1:80 loadfactor=5 timeout=1
 BalancerMember http://Web2:80 loadfactor=5 timeout=1
 ```
 You can try to curl your Web Servers from LB locally curl http://Web1 or curl http://Web2 – it shall work.
+
 ![Screenshot (514)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/dd035909-79f3-45c2-ae3a-93d06d0c686f)
 
+![Screenshot (515)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/e83538ab-62cb-46a8-85cf-227d49936910)
 
 
 Remember, this is only internal configuration and it is also local to your LB server, these names will neither be ‘resolvable’ from other servers internally nor from the Internet.
