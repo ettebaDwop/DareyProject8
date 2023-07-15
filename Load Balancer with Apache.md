@@ -51,6 +51,14 @@ sudo systemctl restart apache2
 Make sure apache2 is up and running
 
 `sudo systemctl status apache2`
+![Screenshot (505)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/d44ddb3d-a12c-44a8-bc5b-a0324ceab3a5)
+![Screenshot (506)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/088c4c42-3503-48fa-a0cb-2284e2abe577)
+![Screenshot (507)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/c8b2e4a4-ce01-4f74-aefc-9f347f560dd2)
+![Screenshot (508)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/8e000d03-4b6b-4e7b-9862-e805ca7777ba)
+![Screenshot (509)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/dd1f9850-fed2-4ea1-b92d-32d79d6cf644)
+![Screenshot (510)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/cc4cbca5-9db0-45a3-89e1-0e0b9c5b4ba2)
+![Screenshot (511)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/0fec3cd6-847f-4c4a-b640-bba4881688a4)
+![Screenshot (512)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/856bd113-f32e-4639-aa41-d4c9886f5892)
 
 
 Configure load balancing
