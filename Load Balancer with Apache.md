@@ -133,7 +133,7 @@ You can try to curl your Web Servers from LB locally curl http://Web1 or curl ht
 ![Screenshot (515)](https://github.com/ettebaDwop/dareyProject8/assets/7973831/e83538ab-62cb-46a8-85cf-227d49936910)
 
 
-Remember, this is only internal configuration and it is also local to your LB server, these names will neither be ‘resolvable’ from other servers internally nor from the Internet.
+Remember, is local to our LB server, these names will neither be ‘resolvable’ from other servers internally nor from the Internet.
 
 
 
